@@ -19,12 +19,17 @@ class Pen {
     }
 
     _init() {
-        const initialHeight = storage.get(`pen.previewHeight`, (this._el.outerHeight() / 2));
+        const html          = $('html');
+        let initialHeight   = storage.get(`pen.previewHeight`, (this._el.outerHeight() / 2));
         const preview       = new Preview(this._previewPanel);
         const browser       = new Browser(this._browser);
         let state           = storage.get(`pen.previewState`, 'open');
         let handleClicks    = 0;
         let dblClick        = false;
+
+        if (html.hasClass('ie9')) {
+            initialHeight = '50%';
+        }
 
         if (state === 'open') {
             this._previewPanel.outerHeight(initialHeight);

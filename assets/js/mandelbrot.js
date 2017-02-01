@@ -1,5 +1,7 @@
 'use strict';
 
+require('babel-polyfill');
+
 global.jQuery    = require('jquery');
 const pjax       = require('jquery-pjax');
 const $          = global.jQuery;

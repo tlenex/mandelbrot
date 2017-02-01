@@ -27,8 +27,6 @@ module.exports = function(options){
     config.scripts = [].concat(config.scripts).filter(url => url).map(url => (url === 'default' ? `/${config.static.mount}/js/mandelbrot.js` : url));
     config.favicon = config.favicon || `/${config.static.mount}/favicon.ico`;
 
-    const assetSourceName = 'components';
-
     const theme = new Theme(Path.join(__dirname, '..', 'views'), config);
 
     theme.setErrorView('pages/error.nunj');
@@ -121,7 +119,7 @@ module.exports = function(options){
                 return {
                     handle: comp.handle,
                     asset: res.base
-                }
+                };
             }));
         });
         return params;

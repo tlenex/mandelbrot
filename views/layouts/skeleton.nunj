@@ -1,14 +1,34 @@
 <!DOCTYPE html>
+<!--[if IE 9]>
+<html lang="{{ frctl.theme.get('lang') | default('en') }}" dir="{{ 'rtl' if frctl.theme.get('rtl') else 'ltr' }}" class="no-js ie ie9 lte9">
+<![endif]-->
+<!--[if gt IE 9]>
+<html lang="{{ frctl.theme.get('lang') | default('en') }}" dir="{{ 'rtl' if frctl.theme.get('rtl') else 'ltr' }}" class="no-js ie">
+<![endif]-->
+<!--[if !IE]><!-->
 <html lang="{{ frctl.theme.get('lang') | default('en') }}" dir="{{ 'rtl' if frctl.theme.get('rtl') else 'ltr' }}" class="no-js">
+<!--<![endif]-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script>
     window.frctl = {
         env: '{% if frctl.env.server %}server{% else %}static{% endif %}'
     };
     </script>
-    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <script>
+    ;(function () {
+        var html = document.querySelector('html') || document.getElementsByTagName('html')[0];
+
+        if (html.classList) {
+            html.classList.remove('no-js'); html.classList.add('has-js');
+        } else {
+            var reJS = new RegExp('(^|\\s)no-js(\\s|$)');
+            html.className = html.className.replace(reJS, '$1has-js$2');
+        }
+    })();
+    </script>
     {% include 'partials/head.nunj' %}
 </head>
 <body>
