@@ -1640,6 +1640,83 @@ h6 {
 .Frame.is-closed .Header-navToggleIcon--closed {
   display: block; }
 
+html.ie9 .Header {
+  height: 50px; }
+  html.ie9 .Header > * {
+    float: left; }
+
+html.ie9 .Frame-handle {
+  display: none; }
+
+html.ie9 .Frame-body {
+  height: auto;
+  width: 100%; }
+
+html.ie9 .Frame-inner {
+  margin-top: 50px; }
+
+html.ie9 .Frame-panel {
+  overflow: auto; }
+
+html.ie9 .Frame-panel--sidebar {
+  box-sizing: border-box;
+  position: absolute;
+  overflow: auto;
+  max-height: 550px;
+  top: 50px;
+  width: auto;
+  min-width: 300px;
+  max-width: 400px;
+  padding-bottom: 20px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(83, 83, 99, 0.25); }
+
+html.ie9 .Frame-panel--main {
+  position: static; }
+
+html.ie9 .Frame.is-closed .Frame-panel--sidebar {
+  display: none; }
+
+html.ie9 .Tree-entityLink {
+  display: block; }
+
+html.ie9 .Status {
+  display: inline; }
+
+html.ie9 .Status {
+  display: inline-block; }
+
+html.ie9 .Pen .Pen-handle, html.ie9 .Pen .Preview-handle {
+  display: none; }
+
+html.ie9 .Pen .Pen-info {
+  height: 45% !important; }
+
+html.ie9 .Pen .Pen-preview {
+  height: 45% !important; }
+
+html.ie9 .Pen .Pen-previewLink {
+  position: relative;
+  bottom: 10px; }
+  html.ie9 .Pen .Pen-previewLink svg {
+    position: relative;
+    bottom: 10px; }
+
+html.ie9 .Pen .Status--tag {
+  position: absolute;
+  top: 10px;
+  right: 10px; }
+
+html.ie9 .Pen .Browser-tab {
+  float: left; }
+
+html.ie9 .Pen .Browser-panel {
+  height: 90%;
+  overflow-y: scroll; }
+  html.ie9 .Pen .Browser-panel.is-active {
+    display: block; }
+
 .Meta a {
   text-decoration: none; }
 
@@ -2129,6 +2206,7 @@ h6 {
           align-items: center; }
 
 .Status-dot {
+  display: inline-block;
   width: 0.5rem;
   height: 0.5rem;
   background-color: white;
